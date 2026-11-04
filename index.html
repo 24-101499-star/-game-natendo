@@ -24,6 +24,16 @@
 
 
 <body>
+ 
+<div id="retroPopup" class="popup-overlay">
+    <div class="popup-box">
+        <p class="popup-close" onclick="closePopup()">×</p>
+        <p class="popup-badge" id="popup-badge-text"></p>
+        <h3 id="popup-title-text"></h3>
+        <p id="popup-desc-text"></p>
+        <p class="popup-btn" id="popup-btn-text" onclick="closePopup()"></p>
+    </div>
+</div>
     <section class="s-1">
    <img class="ni"src="img/download (15) 1.svg" alt="SKRO Logo">
         <div class="s-1-1">
@@ -176,7 +186,43 @@
         </div>
     </div>
 </section>
+<footer class="footer-section">
+    <div class="footer-container">
+        
+     
+        <div class="footer-col">
+            <img src="img/SKRO_ Play Together Gaming Logo 1.png" alt="SKRO Logo" class="footer-logo">
+            <p class="footer-about">Relive the golden age of gaming with authentic classic gear and epic retro adventures.</p>
+        </div>
 
+  
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Join The Tribe</h3>
+            <p>Subscribe for classic drops and speed-run updates!</p>
+            <div class="footer-socials">
+                <span>⭐</span>
+                <span>🕹️</span>
+                <span>👾</span>
+            </div>
+        </div>
+
+    </div>
+
+   
+    <div class="footer-bottom">
+        <p>© 2026 SKRO. All Rights Reserved. Designed with retro love.</p>
+    </div>
+</footer>
     <script>
        document.getElementById("explore-link").innerHTML = "Start Exploring";
       document.getElementById("home").innerHTML = "Home";
@@ -204,7 +250,72 @@ function toggleDarkMode() {
     body.classList.toggle('dark-mode');
     switchContainer.classList.toggle('active');
 }
-        
+
+function scrollToSection() {
+    document.querySelector('.section3').scrollIntoView({ 
+        behavior: 'smooth' 
+    });
+}
+
+
+let popupDeals = [
+    {
+        badge: "⚡ SPEED-RUN BONUS ⚡",
+        title: "FREE ARCADE JOYSTICK!",
+        desc: "You've unlocked a secret flash deal! Get a free Arcade Joystick Pro with any console purchase today.",
+        btn: "CLAIM FREE GIFT"
+    },
+    {
+        badge: "🔥 RETRO MADNESS 🔥",
+        title: "50% OFF GAME CARTRIDGES!",
+        desc: "The vault is open! Enjoy half-price discounts on all classic game cartridge boxes for the next 10 minutes.",
+        btn: "GRAB 50% OFF"
+    },
+    {
+        badge: "⭐ VIP PLAYER 1 ⭐",
+        title: "LIFETIME WARRANTY UNLOCKED!",
+        desc: "Congratulations, gamer! Your next order comes with a 100% free lifetime VIP warranty on all retro gear.",
+        btn: "ACTIVATE VIP"
+    },
+    {
+        badge: "🕹️ NOSTALGIA DROP 🕹️",
+        title: "BUY 1 GET 1 30% OFF!",
+        desc: "Double the fun! Pick two retro consoles of your choice and get 30% off on the second one instantly.",
+        btn: "SHOP THE DEAL"
+    }
+];
+
+
+let randomIndex = Math.floor(Math.random() * popupDeals.length);
+let selectedDeal = popupDeals[randomIndex];
+
+
+let popupBadgeText = document.getElementById("popup-badge-text");
+popupBadgeText.innerText = selectedDeal.badge;
+
+let popupTitleText = document.getElementById("popup-title-text");
+popupTitleText.innerText = selectedDeal.title;
+
+let popupDescText = document.getElementById("popup-desc-text");
+popupDescText.innerText = selectedDeal.desc;
+
+let popupBtnText = document.getElementById("popup-btn-text");
+popupBtnText.innerText = selectedDeal.btn;
+
+
+window.addEventListener('load', function() {
+    let randomTime = Math.random() * 3000 + 2000;
+    setTimeout(function() {
+        let popup = document.getElementById('retroPopup');
+        popup.classList.add('show');
+    }, randomTime);
+});
+
+
+function closePopup() {
+    let popup = document.getElementById('retroPopup');
+    popup.classList.remove('show');
+}
     </script>
 
    
