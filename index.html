@@ -20,26 +20,100 @@
 </header>
 <body>
     <section class="s-1">
-
+   <img class="ni"src="img/download (15) 1.svg" alt="SKRO Logo">
         <div class="s-1-1">
                     <img src="img/Group 3.svg" alt="SKRO Logo">
 
-                    <img class="ni"src="img/download (15) 1.svg" alt="SKRO Logo">
+                  
 
-                    <img
+               <img class="ni-2" src="pixilated-yoshi-running-rnf0gmicxzv522fm.gif" alt="SKRO Logo">
+                 <img class="ni-3" src="1pNZ.gif" alt="SKRO Logo">
 
+                 <div class="welcome-text">
+                    <p id="welcome-text">Welcome to SKRO!</p>
+                   <button onclick="scrollToSection()"  id="explore-link" href="#">Start Exploring</button>
+                 </div>
+        </div>
+    </section>
+    
+    <section class="s-2">
+        <img src="img/Union.svg" alt="SKRO Logo">
+    </section>
+
+   <section class="section3">
+    <div class="header-box">
+        <h2>THE ULTIMATE FAVORITES</h2>
+        <p>Discover the most sought-after gaming gear! Pick your favorite adventure, adjust <br> your quantities, and relive the ultimate nostalgic vibe with every click.</p>
+    </div>
+ 
+    <div class="contain">
+  
+        <div class="product-card">
+            <img src="img/Glossy Purple Game UI Frame 3.svg" alt="Card Frame" class="frame-bg">
+            <div class="card-content">
+                <img src="img/GBA SP Purple 3D Render (1).png" alt="GBA Retro Console" class="product-img">
+                <h3 class="product-title">GBA Retro Console</h3>
+                <p class="product-price">450 EGP</p>
+                <div class="quantity-control">
+                    <button class="qty-btn" onclick="updateQty(this, -1)">-</button>
+                    <span class="qty-value">01</span>
+                    <button class="qty-btn" onclick="updateQty(this, 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="product-card">
+            <img  
+            src="img/Glossy Purple Game UI Frame 3.svg" alt="Card Frame" class="frame-bg">
+            <div class="card-content">
+                <img src="img/888123989012446578 1.png" alt="Arcade Joystick" class="product-img">
+                <h3 class="product-title">Arcade Joystick Pro</h3>
+                <p class="product-price">320 EGP</p>
+                <div class="quantity-control">
+                    <button class="qty-btn" onclick="updateQty(this, -1)">-</button>
+                    <span class="qty-value">01</span>
+                    <button class="qty-btn" onclick="updateQty(this, 1)">+</button>
+                </div>
+            </div>
         </div>
 
 
-    </section>
-
+        <div class="product-card">
+            <img src="img/Glossy Purple Game UI Frame 3.svg" alt="Card Frame" class="frame-bg">
+            <div class="card-content">
+                <img src="img/Rectangle 4.png" alt="Game Cartridge" class="product-img">
+                <h3 class="product-title">Game Cartridge Box</h3>
+                <p class="product-price">280 EGP</p>
+                <div class="quantity-control">
+                    <button class="qty-btn" onclick="updateQty(this, -1)">-</button>
+                    <span class="qty-value">01</span>
+                    <button class="qty-btn" onclick="updateQty(this, 1)">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+       
 
     <script>
-     
+       document.getElementById("explore-link").innerHTML = "Start Exploring";
       document.getElementById("home").innerHTML = "Home";
       document.getElementById("about").innerHTML = "About";
-        document.getElementById("contact").innerHTML = "Contact";
-        document.getElementById("games").innerHTML = "Games";
+    document.getElementById("contact").innerHTML = "Contact";
+    document.getElementById("games").innerHTML = "Games";
+    document.getElementById("welcome-text").innerHTML = "Dive into a world of retro gaming and epic adventures. Play together, connect, and relive the ultimate  <br> nostalgic vibe with your favorite characters.";
+    function updateQty(button, change) {
+    const controlDiv = button.parentElement;
+    const qtySpan = controlDiv.querySelector('.qty-value');
+    
+    let currentQty = parseInt(qtySpan.textContent);
+    currentQty += change;
+
+    if (currentQty < 1) currentQty = 1;
+
+    qtySpan.textContent = currentQty < 10 ? '0' + currentQty : currentQty;
+}
         
     </script>
 
