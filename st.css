@@ -1,0 +1,110 @@
+.s-1{ 
+        width: 100%;
+       height: 870px;;
+        border-radius: 0 0 30px 30px;
+        background: linear-gradient(180deg, #010000 36.91%, #31061B 68.31%, #FB208E 104.78%);
+
+        position: relative;
+}
+ body{
+    width: 100%;
+    margin: 0;
+    position: relative;
+ }
+
+header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000000;
+    direction: ltr;
+    background: transparent;
+}
+
+header img {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-left: 60px;
+    margin-right: 0;
+}
+
+li:last-child {
+    margin-left: 60px;
+}
+
+
+#home, #about, #contact, #games {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Fredoka', sans-serif;
+    position: relative;
+    padding-bottom: 5px;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;
+}
+
+
+#home::after, #about::after, #contact::after, #games::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: #FB208E;
+    box-shadow: 0 0 10px #FB208E, 0 0 15px #FB208E; 
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+
+#home:hover, #about:hover, #contact:hover, #games:hover {
+    color: #FB208E;
+    transform: translateY(-3px) scale(1.05); 
+}
+
+#home:hover::after, #about:hover::after, #contact:hover::after, #games:hover::after {
+    width: 100%; 
+    left: 0;
+}
+
+
+.s-1-1 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+.ni {
+    position: absolute;
+    top: 90%;
+    left: 32%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: auto; 
+}
