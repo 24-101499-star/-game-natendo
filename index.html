@@ -17,7 +17,12 @@
        <li id="contact"><a href="#"></a></li>
        <li id="games"><a href="#"></a></li>
     </ul>
+    <div class="switch-container" onclick="toggleDarkMode()">
+    <div class="switch-btn" id="retroSwitch"></div>
+</div>
 </header>
+
+
 <body>
     <section class="s-1">
    <img class="ni"src="img/download (15) 1.svg" alt="SKRO Logo">
@@ -47,7 +52,7 @@
     </div>
  
     <div class="contain">
-        <!-- الكارد الأول -->
+    
         <div class="product-card">
             <img src="img/Glossy Purple Game UI Frame 3.svg" alt="Card Frame" class="frame-bg">
             <div class="card-content">
@@ -180,8 +185,8 @@
     document.getElementById("games").innerHTML = "Games";
     document.getElementById("welcome-text").innerHTML = "Dive into a world of retro gaming and epic adventures. Play together, connect, and relive the ultimate  <br> nostalgic vibe with your favorite characters.";
     function updateQty(button, change) {
-    const controlDiv = button.parentElement;
-    const qtySpan = controlDiv.querySelector('.qty-value');
+  let controlDiv = button.parentElement;
+    let qtySpan = controlDiv.querySelector('.qty-value');
     
     let currentQty = parseInt(qtySpan.textContent);
     currentQty += change;
@@ -189,6 +194,15 @@
     if (currentQty < 1) currentQty = 1;
 
     qtySpan.textContent = currentQty < 10 ? '0' + currentQty : currentQty;
+}
+
+function toggleDarkMode() {
+    const body = document.body;
+    const switchContainer = document.querySelector('.switch-container');
+    
+ 
+    body.classList.toggle('dark-mode');
+    switchContainer.classList.toggle('active');
 }
         
     </script>
